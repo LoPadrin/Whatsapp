@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Redirecionamento WhatsApp</title>
+  <script>
+    function redirectToWhatsApp() {
+      const now = new Date();
+      const hour = now.getHours();
+      let greeting;
+
+      if (hour >= 5 && hour < 12) {
+        greeting = "Bom dia! Aqui é o MontesRm, editor de vídeos. Como posso te ajudar?";
+      } else if (hour >= 12 && hour < 18) {
+        greeting = "Boa tarde! Aqui é o MontesRm, editor de vídeos. Como posso te ajudar?";
+      } else {
+        greeting = "Boa noite! Aqui é o MontesRm, editor de vídeos. Como posso te ajudar?";
+      }
+
+      const phone = "558193226740";
+      const url = `https://wa.me/${phone}?text=${encodeURIComponent(greeting)}`;
+      window.location.href = url;
+    }
+
+    window.onload = redirectToWhatsApp;
+  </script>
+</head>
+<body>
+  <p>Redirecionando para o WhatsApp...</p>
+</body>
+</html>
